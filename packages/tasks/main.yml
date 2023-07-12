@@ -1,0 +1,11 @@
+---
+# tasks file for packages
+- name: Install unzip
+  ansible.builtin.package:
+    name: unzip
+    state: present
+  
+- name: Install net-tools
+  ansible.builtin.package:
+    name: net-tools
+    state: present
