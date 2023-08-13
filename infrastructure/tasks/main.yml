@@ -15,3 +15,10 @@
     project_src: "{{ deployment_path }}"
     build: yes
     debug: yes
+
+- name: Add to perminsion Docker daemon socket at var_run_docker.sock
+  community.docker.docker_container_exec:
+    container: jenkins_agent
+    command: /bin/bash -c "chmod 666 /var/run/docker.sock"
+    chdir: /root
+  register: result
